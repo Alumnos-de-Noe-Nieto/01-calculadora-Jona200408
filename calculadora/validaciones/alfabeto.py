@@ -2,6 +2,7 @@
 Nivel 1: Análisis Léxico - Alfabeto (Σ = {I, V, X, L, C, D, M})
 """
 
+
 def validar_simbolos(cadena: str) -> bool:
     """
     Valida si todos los caracteres de la cadena pertenecen al alfabeto romano.
@@ -30,4 +31,8 @@ def validar_simbolos(cadena: str) -> bool:
         >>> validar_simbolos("  XIV  ")
         True
     """
-    raise NotImplementedError()
+    cadena = cadena.strip()
+    if not cadena:
+        return False
+    simbolos_validos = set('IVXLCDM')
+    return all(caracter in simbolos_validos for caracter in cadena)
